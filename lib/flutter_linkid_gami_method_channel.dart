@@ -14,4 +14,14 @@ class MethodChannelFlutterLinkidGami extends FlutterLinkidGamiPlatform {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+  @override
+  Future<void> initSDK() async {
+    await methodChannel.invokeMethod<String>('initSDK');
+  }
+
+  @override
+  Future<void> showGame() async {
+    await methodChannel.invokeMethod<String>('showGame');
+  }
 }
