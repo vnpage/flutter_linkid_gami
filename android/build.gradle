@@ -16,6 +16,10 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url "https://repo-dev.linkid.vn/android/maven/"
+
+        }
     }
 }
 
@@ -26,7 +30,7 @@ android {
         namespace = "com.linkid.flutter_linkid_gami"
     }
 
-    compileSdk = 34
+    compileSdk = 33
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -34,12 +38,13 @@ android {
     }
 
     defaultConfig {
-        minSdk = 21
+        minSdk = 24
     }
 
     dependencies {
         testImplementation("junit:junit:4.13.2")
         testImplementation("org.mockito:mockito-core:5.0.0")
+        implementation("com.linkid.fintech:gamesdk:1.0.16")
     }
 
     testOptions {

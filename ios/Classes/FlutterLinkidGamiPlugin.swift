@@ -12,6 +12,10 @@ public class FlutterLinkidGamiPlugin: NSObject, FlutterPlugin {
     switch call.method {
     case "getPlatformVersion":
       result("iOS " + UIDevice.current.systemVersion)
+    case "initSDK":
+      result("iOS " + UIDevice.current.systemVersion)
+    case "showGame":
+      result("iOS " + UIDevice.current.systemVersion)
     default:
       result(FlutterMethodNotImplemented)
     }

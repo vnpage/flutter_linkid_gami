@@ -54,8 +54,20 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        body: Column(
+          children: [
+            Text('Running on: $_platformVersion\n'),
+            InkWell(
+              onTap: () {
+                _flutterLinkidGamiPlugin.showGame();
+              },
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                color: Colors.blue,
+                child: const Text('Show Game', style: TextStyle(color: Colors.white)),
+              ),
+            ),
+          ],
         ),
       ),
     );
