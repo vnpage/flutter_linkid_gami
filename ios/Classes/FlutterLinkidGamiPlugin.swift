@@ -17,7 +17,7 @@ public class FlutterLinkidGamiPlugin: NSObject, FlutterPlugin {
 //        LinkIDGameSDK.shared.sendData(<#T##data: GameData##GameData#>)
     case "showGame":
         LinkIDGameSDK.shared.show()
-      result("iOS " + UIDevice.current.systemVersion)
+      result(true)
     default:
       result(FlutterMethodNotImplemented)
     }

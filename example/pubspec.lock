@@ -78,11 +78,9 @@ packages:
   flutter_linkid_gami:
     dependency: "direct main"
     description:
-      path: "."
-      ref: linkid_2024073101
-      resolved-ref: "514f7da0c6b5cf220ba198735e3003c0e9895777"
-      url: "https://github.com/vnpage/flutter_linkid_gami.git"
-    source: git
+      path: ".."
+      relative: true
+    source: path
     version: "0.0.1"
   flutter_lints:
     dependency: "direct dev"
