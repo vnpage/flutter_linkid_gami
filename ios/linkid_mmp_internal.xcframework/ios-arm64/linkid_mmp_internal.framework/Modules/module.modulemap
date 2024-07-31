@@ -1,0 +1,11 @@
+framework module linkid_mmp_internal {
+  umbrella header "linkid_mmp_internal-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module linkid_mmp_internal.Swift {
+  header "linkid_mmp_internal-Swift.h"
+  requires objc
+}
