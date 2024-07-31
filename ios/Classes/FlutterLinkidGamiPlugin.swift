@@ -2,14 +2,24 @@ import Flutter
 import UIKit
 
 public class FlutterLinkidGamiPlugin: NSObject, FlutterPlugin, GameEventProtocol {
-    public func onReceiveEvent(_ message: String) {
-        print("onReceiveEvent: \(message)")
+    
+    var channel: FlutterMethodChannel?
+    public static let sharedInstance = FlutterLinkidGamiPlugin()
+    
+    private override init() {
+        super.init()
     }
     
+    public func onReceiveEvent(_ message: String) {
+        print("onReceiveEvent: \(message)")
+        channel?.invokeMethod("onReceiveEvent", arguments: message)
+    }
+    
+    
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter_linkid_gami", binaryMessenger: registrar.messenger())
-    let instance = FlutterLinkidGamiPlugin()
-    registrar.addMethodCallDelegate(instance, channel: channel)
+      let instance = FlutterLinkidGamiPlugin.sharedInstance
+      instance.channel = FlutterMethodChannel(name: "flutter_linkid_gami", binaryMessenger: registrar.messenger())
+      registrar.addMethodCallDelegate(instance, channel: instance.channel!)
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
