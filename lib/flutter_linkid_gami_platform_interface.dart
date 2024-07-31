@@ -1,4 +1,5 @@
 import 'package:flutter_linkid_gami/game_data.dart';
+import 'package:flutter_linkid_gami/gami_event_handler.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'flutter_linkid_gami_method_channel.dart';
@@ -34,5 +35,9 @@ abstract class FlutterLinkidGamiPlatform extends PlatformInterface {
 
   Future<void> showGame(GameData gameData) {
     throw UnimplementedError('showGame() has not been implemented.');
+  }
+
+  void setGamiEventHandler(GamiEventHandler gamiEventHandler) {
+    throw UnimplementedError('setGamiEventHandler() has not been implemented.');
   }
 }

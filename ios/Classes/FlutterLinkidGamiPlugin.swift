@@ -12,7 +12,7 @@ public class FlutterLinkidGamiPlugin: NSObject, FlutterPlugin, GameEventProtocol
     
     public func onReceiveEvent(_ message: String) {
         print("onReceiveEvent: \(message)")
-        channel?.invokeMethod("onReceiveEvent", arguments: message)
+        channel?.invokeMethod("onEventTracking", arguments: message)
     }
     
     

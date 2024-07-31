@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_linkid_gami/flutter_linkid_gami.dart';
 import 'package:flutter_linkid_gami/game_data.dart';
+import 'package:flutter_linkid_gami/gami_event_handler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> implements GamiEventHandler {
   String _platformVersion = 'Unknown';
   final _flutterLinkidGamiPlugin = FlutterLinkidGami();
 
@@ -64,6 +65,7 @@ class _MyAppState extends State<MyApp> {
                     token:
                         'qFRB3Cq1W+efIiO1+M5LWcnPL/lLtmFGQw9ecp5CFOp6uzoHqKNkvuaYERQYBynbiTLhW5PStzTssdktP12z+lskEY1Iv+TC',
                     environment: 'uat');
+                _flutterLinkidGamiPlugin.setEventHandler(this);
                 _flutterLinkidGamiPlugin.showGame(gameData: data);
               },
               child: Container(
@@ -76,5 +78,11 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
+  }
+
+  @override
+  void onEventTracking(String message) {
+    // TODO: implement onEventTracking
+    print("onTracking from flutter "+message);
   }
 }
