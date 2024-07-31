@@ -16,10 +16,6 @@ class FlutterLinkidGami {
     return FlutterLinkidGamiPlatform.instance.getPlatformVersion();
   }
 
-  void initSDK() {
-    FlutterLinkidGamiPlatform.instance.initSDK();
-  }
-
   void showGame({required GameData gameData}) {
     // GameData gameData = GameData(gameName: gameName, token: token, environment: environment);
     FlutterLinkidGamiPlatform.instance.showGame(gameData);

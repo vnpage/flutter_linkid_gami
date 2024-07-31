@@ -29,10 +29,6 @@ abstract class FlutterLinkidGamiPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<void> initSDK() {
-    throw UnimplementedError('initSDK() has not been implemented.');
-  }
-
   Future<void> showGame(GameData gameData) {
     throw UnimplementedError('showGame() has not been implemented.');
   }

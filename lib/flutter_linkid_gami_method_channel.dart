@@ -34,11 +34,6 @@ class MethodChannelFlutterLinkidGami extends FlutterLinkidGamiPlatform {
   }
 
   @override
-  Future<void> initSDK() async {
-    await methodChannel.invokeMethod<String>('initSDK');
-  }
-
-  @override
   Future<void> showGame(GameData gameData) async {
     final result = await methodChannel.invokeMethod<String>('showGame', gameData.toMap());
     print('Result from native: $result');
