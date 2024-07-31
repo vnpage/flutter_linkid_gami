@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_linkid_gami/game_data.dart';
 
 import 'flutter_linkid_gami_platform_interface.dart';
 
@@ -21,7 +22,8 @@ class MethodChannelFlutterLinkidGami extends FlutterLinkidGamiPlatform {
   }
 
   @override
-  Future<void> showGame() async {
-    await methodChannel.invokeMethod<String>('showGame');
+  Future<void> showGame(GameData gameData) async {
+    final result = await methodChannel.invokeMethod<String>('showGame', gameData.toMap());
+    print('Result from native: $result');
   }
 }

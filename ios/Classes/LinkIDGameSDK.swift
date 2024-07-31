@@ -266,7 +266,6 @@ extension LinkIDGameSDK: NativeCallsProtocol {
         if let data = gameName.data(using: .utf8) {
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    print("Parse succeed: \(json)")
                     if let eventKey = json["eventKey"] as? String,
                         let key = json["key"] as? String,
                         let value = json["value"] as? String {

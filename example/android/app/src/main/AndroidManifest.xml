@@ -3,7 +3,6 @@
     tools:overrideLibrary="com.linkid.flutter_linkid_gami"
     >
     <application
-        android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         tools:overrideLibrary="com.linkid.flutter_linkid_gami"
         android:label="flutter_linkid_gami_example">

@@ -1,3 +1,4 @@
+import 'package:flutter_linkid_gami/game_data.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'flutter_linkid_gami_method_channel.dart';
@@ -27,11 +28,11 @@ abstract class FlutterLinkidGamiPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<void>  initSDK() {
+  Future<void> initSDK() {
     throw UnimplementedError('initSDK() has not been implemented.');
   }
 
-  Future<void>  showGame() {
+  Future<void> showGame(GameData gameData) {
     throw UnimplementedError('showGame() has not been implemented.');
   }
 }

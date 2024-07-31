@@ -1,9 +1,9 @@
+import 'package:flutter_linkid_gami/game_data.dart';
 
 import 'flutter_linkid_gami_platform_interface.dart';
 
 class FlutterLinkidGami {
-  static final FlutterLinkidGami shared =
-  FlutterLinkidGami._internal();
+  static final FlutterLinkidGami shared = FlutterLinkidGami._internal();
 
   factory FlutterLinkidGami() {
     return shared;
@@ -19,7 +19,8 @@ class FlutterLinkidGami {
     FlutterLinkidGamiPlatform.instance.initSDK();
   }
 
-  void showGame() {
-    FlutterLinkidGamiPlatform.instance.showGame();
+  void showGame({required GameData gameData}) {
+    // GameData gameData = GameData(gameName: gameName, token: token, environment: environment);
+    FlutterLinkidGamiPlatform.instance.showGame(gameData);
   }
 }
